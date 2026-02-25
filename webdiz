@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>F1 Racing</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87ceeb 0%, #87ceeb 60%, #2e2e2e 60%, #2e2e2e 100%);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.track {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 150px;
+    background: repeating-linear-gradient(
+        to right,
+        #2e2e2e 0px,
+        #2e2e2e 40px,
+        #ffffff 40px,
+        #ffffff 60px
+    );
+    animation: moveTrack 3s linear infinite;
+}
+
+@keyframes moveTrack {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.car {
+    position: absolute;
+    bottom: 100px;
+    width: 120px;
+    height: 40px;
+    background: red;
+    border-radius: 10px;
+    animation: moveCar 5s linear infinite;
+}
+
+.car::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    width: 60px;
+    height: 20px;
+    background: red;
+    border-radius: 5px;
+}
+
+.car::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    background: black;
+    border-radius: 50%;
+    box-shadow: 80px 0 black;
+}
+
+@keyframes moveCar {
+    from { left: -150px; }
+    to { left: 110%; }
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin-top: 200px;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="car"></div>
+<div class="track"></div>
+
+<div class="content">
+    <h1>you might feel dizzy</h1>
+    <p>..............................................</p>
+</div>
+
+</body>
+</html>
